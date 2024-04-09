@@ -6,8 +6,8 @@ import androidx.compose.runtime.Composable
 expect fun rememberCameraManager(onResult: (SharedImage?) -> Unit): CameraManager
 
 
-expect class CameraManager(
-    onLaunch: () -> Unit
+class CameraManager(
+    private val onLaunch: () -> Unit
 ) {
-    fun launch()
+    fun launch() = onLaunch()
 }
